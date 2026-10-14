@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-<title>AI 바이브앱 HUB</title>
+<meta name="description" content="Production Tools for NewsDesign — Newsroom Toolkit" />
+<title>Production Tools for NewsDesign</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -35,6 +36,9 @@ header { position:sticky; top:0; z-index:20; background:rgba(253,252,249,.92); b
 .header-inner { max-width:1400px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:10px; height:52px; }
 .logo-box { width:28px; height:28px; border-radius:8px; background:#1c1c1e; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .site-title { font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:700; font-size:17px; letter-spacing:-.3px; }
+.site-subtitle { font-family:'Space Grotesk','Noto Sans KR',sans-serif; font-weight:500; font-size:13px; color:var(--text-muted); padding-left:10px; border-left:1px solid var(--border); line-height:1.2; white-space:nowrap; }
+.title-group { display:flex; align-items:center; gap:10px; min-width:0; }
+@media (max-width:480px) { .title-group { flex-direction:column; align-items:flex-start; gap:1px; } .site-title { font-size:15px; line-height:1.2; } .site-subtitle { font-size:11px; padding-left:0; border-left:0; } }
 
 /* TAB NAV */
 .tab-nav-wrap { position:sticky; top:52px; z-index:10; background:rgba(247,244,238,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
@@ -213,7 +217,7 @@ footer { border-top:1px solid var(--border); padding:14px 24px; text-align:cente
         <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
       </svg>
     </div>
-    <span class="site-title">AI 바이브앱 HUB</span>
+    <div class="title-group"><span class="site-title">Production Tools for NewsDesign</span><span class="site-subtitle">Newsroom Toolkit</span></div>
   </div>
 </header>
 
@@ -257,7 +261,7 @@ footer { border-top:1px solid var(--border); padding:14px 24px; text-align:cente
   <div class="grid" id="appGrid"></div>
 </main>
 
-<footer>AI 바이브앱 HUB — 내 앱을 한눈에</footer>
+<footer>Production Tools for NewsDesign — Newsroom Toolkit</footer>
 <div class="toast-wrap" id="toastWrap"></div>
 
 <!-- App Form Modal -->
@@ -411,7 +415,7 @@ let state = {
 document.body.classList.add('layout-gallery');
 if (IS_PUBLIC_VIEW) {
   document.body.classList.add('public-view');
-  document.querySelector('footer').textContent='AI 바이브앱 HUB — Portfolio Board';
+  document.querySelector('footer').textContent='Production Tools for NewsDesign — Newsroom Toolkit';
 }
 
 function loadJSON(key, fb) { try { return JSON.parse(localStorage.getItem(key)) ?? fb; } catch { return fb; } }
